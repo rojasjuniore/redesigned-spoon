@@ -5,7 +5,7 @@
         <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
       </a>
     </div>-->
-    <img src="./assets/iconsimbolo.svg" height="100"  width="100" alt="Descuento">
+    <img src="./assets/iconsimbolo.svg" height="100" width="100" alt="Descuento">
     <h3 style="color:#000;">Inicio de sesión</h3>
     <span class="error" *ngIf="error">{{ error }}</span>
     <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
@@ -14,8 +14,8 @@
       <button type="submit" [disabled]="!formData.valid" class="basic-btn">Iniciar sesión</button>
       <hr>
 
-      <div *ngIf="_lgs.a_error" class="alert alert-danger mt-1" role="alert">
-        {{_lgs.error}}
+      <div *ngIf="a_error" class="alert alert-danger mt-1" role="alert">
+        {{error}}
       </div>
       <!--<div class="mt-2">
         <a (click)="_lgs.socialLogin('google')" class="nav-item btn-sm  btn btn-danger bg-danger" title="Entrar con Google">

@@ -9,10 +9,16 @@ declare var $: any;
 })
 export class LoginComponent implements OnInit {
 
+  a_error: boolean;
+  email: string;
+  password: string;
+  error: any;
   constructor(public _lgs: LoginService, public _ns: NavbarService) { }
 
   ngOnInit() {
     this._ns.hide();
+    this.a_error = this._lgs.a_error
+    this.error = this._lgs.error
     // $("#wrapper").removeClass("toggled");
   }
 

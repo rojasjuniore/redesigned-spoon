@@ -14,6 +14,11 @@ export class PromotionComponent implements OnInit {
   places: any = [];
   files: any;
 
+  campaign_name = '';
+  lugar = '';
+  description__promotion = '';
+  start_of_campaign = '';
+  end_of_campaign = '';
   constructor(public _whs: WarehouseService,
     public _ns: NavbarService,
     public _us: UploaderService,
