@@ -12,11 +12,8 @@ export class WarehouseService {
   constructor(private _http: Http) { }
 
   public getWarehouses() {
-    // return this.db.list('/lugares');
-    // return this._http.get(this.API_ENDPOINT + '/lugares.json');
     return this._http.get(this.API_ENDPOINT + '/Warehouse.json')
       .map((resultado) => {
-        // console.log(resultado.json())
         const data = resultado.json();
         return data;
       });

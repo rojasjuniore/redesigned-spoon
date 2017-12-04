@@ -1,0 +1,78 @@
+<ng4-loading-spinner> </ng4-loading-spinner>
+<div class="main-content">
+  <div class="container-fluid">
+    <h1>Empezar una promoción </h1>
+    <div class="row">
+      <div class="col-md-8">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" role="form">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre de la Campaña</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="La Mejor Campaña">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Seleccione almacén</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option *ngFor="let lugar of places">{{lugar.name}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Descripcion de la Promocion</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="co-md-4">
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Inicio de Campaña</label>
+                  <div class="input-group">
+                    <input class="form-control" placeholder="2000/01/12" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                    <button class="input-group-addon" (click)="d.toggle()" type="button">
+                      <i class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="co-md-4 ml-2">
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Fin de Campaña</label>
+                  <div class="input-group">
+                    <input class="form-control" placeholder="2000/02/27" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                    <button class="input-group-addon" (click)="d.toggle()" type="button">
+                      <i class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Imagenes de la promoción</label>
+            <input type="file" multiple="true" (change)="fileChanges($event)">
+          </div>
+          <button type="submit" class="btn btn-danger pull-right">Empezar Campaña</button>
+          <div class="clearfix"></div>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <a href="#pablo">
+              <img class="img" src="../assets/img/faces/marc.jpg" />
+            </a>
+          </div>
+
+          <div class="content">
+            <!-- <h6 class="category text-gray">CEO / Co-Founder</h6>-->
+            <!--<h4 class="card-title">Alec Thompson</h4>-->
+            <p class="card-content">
+              Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye
+              I love Rick Owens’ bed design but the back is...
+            </p>
+            <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

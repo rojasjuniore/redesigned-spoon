@@ -45,7 +45,7 @@ export class LoginService {
           this.a_error = true;
         }
         if (error['code'] === 'auth/user-not-found') {
-          this.error = 'Aun no esta registrado en Emite.me. ☹️';
+          this.error = 'Aun no esta registrado. ☹️';
           this.a_error = true;
         }
         if (error['code'] === 'auth/invalid-email') {

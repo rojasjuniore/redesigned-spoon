@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/authentication/login.service';
+import { LoginService, NavbarService } from '../../services/services';
+declare var $: any;
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,11 @@ import { LoginService } from '../../services/authentication/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _lgs: LoginService) { }
+  constructor(public _lgs: LoginService, public _ns: NavbarService) { }
 
   ngOnInit() {
+    this._ns.hide();
+    // $("#wrapper").removeClass("toggled");
   }
 
   onSubmit(formData) {
@@ -19,5 +22,7 @@ export class LoginComponent implements OnInit {
         .signInWithEmailAndPassword(formData.value.email, formData.value.password);
     }
   }
+
+
 
 }

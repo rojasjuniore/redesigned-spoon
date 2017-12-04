@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { WarehouseService } from '../../../services/warehouse.service';
+import { WarehouseService, NavbarService } from '../../../services/services';
 
 @Component({
   selector: 'app-store-record',
@@ -14,12 +14,12 @@ export class StoreRecordComponent implements OnInit {
   warehouse: any = {};
   places: any = [];
 
-  constructor(public _whs: WarehouseService) { }
+  constructor(public _whs: WarehouseService, public _ns: NavbarService) { }
 
   ngOnInit() {
 
+    this._ns.show();
     navigator.geolocation.getCurrentPosition(this.showPosition);
-
     this._whs.
       getWarehouses()
       .subscribe((places) => {

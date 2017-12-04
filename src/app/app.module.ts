@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { HttpModule } from '@angular/http';
 
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 import { DataTableModule } from 'angular2-datatable';
 import { DataFilterPipe } from './pipes/data-filter.pipe';
 
@@ -17,17 +21,30 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { APP_ROUTING } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { StoreRecordComponent } from './components/record/store-record/store-record.component';
-import { LoginComponent } from './components/login/login.component';
-import { StoreQueryComponent } from './components/record/store-query/store-query.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { NavBarComponent } from './components/shared/nav-bar/nav-bar.component';
 
-import { WarehouseService } from './services/warehouse.service';
-import { LoginService } from './services/authentication/login.service';
-import { SigUpService } from './services/authentication/sig-up.service';
+import {
+  StoreRecordComponent,
+  LoginComponent,
+  StoreQueryComponent,
+  DashboardComponent,
+  NavBarComponent,
+  SigUpComponent,
+  ProfileComponent,
+  MapsComponent,
+  ContactComponent,
+  NotificationsComponent,
+  PromotionComponent
+} from './components/components';
 
-import { SigUpComponent } from './components/sig-up/sig-up.component';
+import {
+  WarehouseService,
+  LoginService,
+  SigUpService,
+  LogoutService,
+  NavbarService,
+  UploaderService
+} from './services/services';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +55,12 @@ import { SigUpComponent } from './components/sig-up/sig-up.component';
     DashboardComponent,
     NavBarComponent,
     SigUpComponent,
-    DataFilterPipe
+    DataFilterPipe,
+    ProfileComponent,
+    MapsComponent,
+    ContactComponent,
+    NotificationsComponent,
+    PromotionComponent
   ],
   imports: [
     BrowserModule,
@@ -52,12 +74,18 @@ import { SigUpComponent } from './components/sig-up/sig-up.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCWoJrMozjWKEIX2_ZHDVFsOpivpkSYPUE'
     }),
-    DataTableModule
+    DataTableModule,
+    Ng4LoadingSpinnerModule.forRoot(), // https://github.com/amitmahida92/ng4-loading-spinner
+    NgbModule.forRoot() //https://ng-bootstrap.github.io/#/getting-started
   ],
   providers: [
     WarehouseService,
     LoginService,
     SigUpService,
+    LogoutService,
+    NavbarService,
+    UploaderService,
+    UploaderService,
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy

@@ -1,12 +1,17 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!--<h1>{{ title }}</h1>-->
+<div id="wrapper" class="toggled">
 
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<!--<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>-->
-<!--<app-nav-bar></app-nav-bar>-->
-<div class="container">
-  <router-outlet></router-outlet>
+    <!-- Sidebar -->
+    <app-nav-bar></app-nav-bar>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+
+            <router-outlet></router-outlet>
+            <!--<a (click)="show()" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>-->
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
 </div>

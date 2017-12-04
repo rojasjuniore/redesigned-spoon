@@ -6,7 +6,12 @@ import {
     StoreQueryComponent,
     StoreRecordComponent,
     DashboardComponent,
-    SigUpComponent
+    SigUpComponent,
+    ProfileComponent,
+    MapsComponent,
+    ContactComponent,
+    NotificationsComponent,
+    PromotionComponent
 } from './components/components';
 
 const APP_ROUTES:
@@ -22,8 +27,23 @@ const APP_ROUTES:
             pathMatch: 'full'
         },
         {
-            path: 'storequery',
-            component: StoreQueryComponent,
+            path: 'dashboard',
+            component: DashboardComponent,
+            pathMatch: 'full'
+        },
+        {
+            path: 'map',
+            component: MapsComponent,
+            pathMatch: 'full'
+        },
+        {
+            path: 'profile',
+            component: ProfileComponent,
+            pathMatch: 'full'
+        },
+        {
+            path: 'promotion',
+            component: PromotionComponent,
             pathMatch: 'full'
         },
         {
@@ -32,8 +52,18 @@ const APP_ROUTES:
             pathMatch: 'full'
         },
         {
-            path: 'dashboard',
-            component: DashboardComponent,
+            path: 'storequery',
+            component: StoreQueryComponent,
+            pathMatch: 'full'
+        },
+        {
+            path: 'contact',
+            component: ContactComponent,
+            pathMatch: 'full'
+        },
+        {
+            path: 'notifications',
+            component: NotificationsComponent,
             pathMatch: 'full'
         },
         {
