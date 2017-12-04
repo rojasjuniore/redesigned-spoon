@@ -1,6 +1,4 @@
 import { RouterModule, Routes } from '@angular/router';
-
-
 import {
     LoginComponent,
     StoreQueryComponent,
@@ -14,12 +12,14 @@ import {
     PromotionComponent
 } from './components/components';
 
+import { GuardGuard } from './guard/guard.guard';
+
 const APP_ROUTES:
     Routes = [
         {
             path: '',
             component: LoginComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
         },
         {
             path: 'signup',
@@ -29,42 +29,50 @@ const APP_ROUTES:
         {
             path: 'dashboard',
             component: DashboardComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
+            canActivate: [GuardGuard]
         },
         {
             path: 'map',
             component: MapsComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
+            canActivate: [GuardGuard]
         },
         {
             path: 'profile',
             component: ProfileComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
+            canActivate: [GuardGuard]
         },
         {
             path: 'promotion',
             component: PromotionComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
+            canActivate: [GuardGuard]
         },
         {
             path: 'storerecord',
             component: StoreRecordComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
+            canActivate: [GuardGuard]
         },
         {
             path: 'storequery',
             component: StoreQueryComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
+            canActivate: [GuardGuard]
         },
         {
             path: 'contact',
             component: ContactComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
+            canActivate: [GuardGuard]
         },
         {
             path: 'notifications',
             component: NotificationsComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
+            canActivate: [GuardGuard]
         },
         {
             path: '**',

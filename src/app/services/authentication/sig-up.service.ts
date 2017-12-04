@@ -20,10 +20,10 @@ export class SigUpService {
 
         const dataUser = {
           uid: user_firebae.uid,
-          uid1: user_firebae.email.replace(/@/g, '').replace('.', ''),
+          // uid1: user_firebae.email.replace(/@/g, '').replace('.', ''),
           name: 'Tu nombre',
           email: user_firebae.providerData[0].email,
-          photo: '/assets/img/perfil-chat.png'
+          // photo: '/assets/img/perfil-chat.png'
         };
 
         localStorage.setItem('usuario', JSON.stringify(dataUser));

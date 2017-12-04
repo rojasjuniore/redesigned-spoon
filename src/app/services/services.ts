@@ -4,15 +4,18 @@ import { LogoutService } from './authentication/logout.service';
 import { SigUpService } from './authentication/sig-up.service';
 import { WarehouseService } from './database/warehouse.service';
 import { UploaderService } from './common/uploader.service';
-
+import { CommonService } from './common/common.service';
 export const component: any[] = [
     NavbarService,
     LoginService,
     LogoutService,
     SigUpService,
     WarehouseService,
-    UploaderService
+    UploaderService,
+    CommonService
 ];
+
+export * from './common/common.service';
 export * from './common/uploader.service';
 export * from './common/navbar.service';
 export * from './authentication/login.service';

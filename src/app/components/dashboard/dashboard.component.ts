@@ -24,12 +24,12 @@ export class DashboardComponent implements OnInit {
     this._ns.show();
     this.getPlace();
 
-    this._http.get('./assets/data.json')
+    /*this._http.get('./assets/data.json')
       .subscribe((data) => {
         setTimeout(() => {
           this.data = data.json();
         }, 1000);
-      });
+      });*/
   }
 
   getPlace() {

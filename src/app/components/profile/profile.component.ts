@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarService } from '../../services/services';
+import { NavbarService, WarehouseService } from '../../services/services';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
   profile: any = {};
 
 
-  constructor(public _ns: NavbarService) { }
+  constructor(public _ns: NavbarService, public _whs: WarehouseService) { }
 
   ngOnInit() {
     this._ns.show();
@@ -20,6 +20,10 @@ export class ProfileComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     console.log(f.value)
+    this._whs.saveProfile(f.value)
+      .subscribe((data) => {
+        console.log(data)
+      })
   }
 
 }

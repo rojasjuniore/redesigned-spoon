@@ -26,7 +26,7 @@ export class StoreQueryComponent implements OnInit {
 
   ngOnInit() {
     this._ns.show();
-    this.spinnerService.show();
+// this.spinnerService.show();
 
     /*this._http.get('./assets/data.json')
       .subscribe((data) => {
@@ -47,7 +47,7 @@ export class StoreQueryComponent implements OnInit {
         const me = this;
         me.data = Object.keys(me.data).map(function (key) { return me.data[key]; });
 
-        this.spinnerService.hide();
+       // this.spinnerService.hide();
       },
       error => console.log(error));
   }

@@ -21,13 +21,13 @@ export class PromotionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._ns.show();
-    this.spinnerService.show();
+    // this.spinnerService.show();
     this.getPlace();
 
   }
 
   getPlace() {
+    this._ns.show();
     this._whs.
       getWarehouses()
       .subscribe((places) => {
@@ -35,7 +35,7 @@ export class PromotionComponent implements OnInit {
         //  console.log(places);
         const me = this;
         me.places = Object.keys(me.places).map(function (key) { return me.places[key]; });
-        this.spinnerService.hide();
+        // this.spinnerService.hide();
       }, erro => console.log(erro));
   }
 
@@ -46,9 +46,29 @@ export class PromotionComponent implements OnInit {
 
   onSubmit(f: NgForm) {
 
+    // this.spinnerService.show();
     console.log(f.value)
-    if (this.files.length <= 0) return;
-    console.log(this.files)
+    if (f.value.length <= 0) return;
+    this._whs.savePromotion(f.value)
+      .subscribe((data) => {
+        console.log(data)
+        this.spinnerService.hide();
+      }, erro => console.log(erro));
+
+
+    setTimeout(() => {
+      // this.spinnerService.show();
+      if (this.files.length <= 0) {
+        this.spinnerService.hide();
+        return;
+      }
+
+      this._us.uploadMultiple(this.files)
+        .then(() => {
+          // this.spinnerService.hide();
+        });
+      console.log(this.files)
+    }, 3000);
   }
 
 }

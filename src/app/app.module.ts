@@ -42,8 +42,11 @@ import {
   SigUpService,
   LogoutService,
   NavbarService,
-  UploaderService
+  UploaderService,
+  CommonService
 } from './services/services';
+
+import { GuardGuard } from './guard/guard.guard';
 
 
 @NgModule({
@@ -86,10 +89,12 @@ import {
     NavbarService,
     UploaderService,
     UploaderService,
+    CommonService,
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
-    }
+    },
+    GuardGuard
   ],
   bootstrap: [AppComponent]
 })

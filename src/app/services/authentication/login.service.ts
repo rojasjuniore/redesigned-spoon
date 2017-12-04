@@ -30,7 +30,7 @@ export class LoginService {
 
         const dataUser = {
           uid: user.uid,
-          uid1: user.email.replace(/@/g, '').replace('.', ''),
+          // uid1: user.email.replace(/@/g, '').replace('.', ''),
           name: 'Tu nombre',
           email: user.providerData[0].email,
           photo: '/assets/img/perfil-chat.png'
