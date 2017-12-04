@@ -1,13 +1,13 @@
 <ng4-loading-spinner> </ng4-loading-spinner>
 <div class="main-content">
   <div class="container-fluid">
-    <h1>Empezar una promoción </h1>
+    <h1>Empezar una Campaña </h1>
     <div class="row">
       <div class="col-md-8">
         <form #f="ngForm" (ngSubmit)="onSubmit(f)" role="form">
           <div class="form-group">
             <label for="exampleFormControlInput1">Nombre de la Campaña</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="La Mejor Campaña">
+            <input type="email" [(ngModel)]="campaign_name" name="campaign_name" class="form-control" id="exampleFormControlInput1" placeholder="La Mejor Campaña">
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Seleccione almacén</label>
@@ -17,7 +17,8 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Descripcion de la Promocion</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea [(ngModel)]="description__promotion" name="description__promotion" class="form-control" id="exampleFormControlTextarea1"
+              rows="3"></textarea>
           </div>
           <div class="col">
             <div class="row">
@@ -25,7 +26,8 @@
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Inicio de Campaña</label>
                   <div class="input-group">
-                    <input class="form-control" placeholder="2000/01/12" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                    <input class="form-control" placeholder="2000/01/12" name="start_of_campaign" [(ngModel)]="start_of_campaign" ngbDatepicker
+                      #d="ngbDatepicker">
                     <button class="input-group-addon" (click)="d.toggle()" type="button">
                       <i class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;" aria-hidden="true"></i>
                     </button>
@@ -36,8 +38,12 @@
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Fin de Campaña</label>
                   <div class="input-group">
-                    <input class="form-control" placeholder="2000/02/27" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-                    <button class="input-group-addon" (click)="d.toggle()" type="button">
+                    <input  class="form-control" 
+                            placeholder="2000/02/27" 
+                            name="end_of_campaign" 
+                            [(ngModel)]="end_of_campaign" 
+                            ngbDatepicker #d1="ngbDatepicker">
+                    <button class="input-group-addon" (click)="d1.toggle()" type="button">
                       <i class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;" aria-hidden="true"></i>
                     </button>
                   </div>
