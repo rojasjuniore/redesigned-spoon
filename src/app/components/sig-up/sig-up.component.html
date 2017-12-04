@@ -1,0 +1,39 @@
+<div class="login-page animated bounceInRight fast">
+  <div class="form">
+    <div class="d-flex flex-row">
+      <a [routerLink]="['/']">
+        <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+    <img src="" alt="emiteme">
+
+    <h2 style="color:#000;">Únete ahora</h2>
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+
+      <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+      <div *ngIf="_sus.a_error" class="alert alert-danger mt-1 animated fadeIn fast" role="alert">
+        {{_sus.error}}
+      </div>
+      <!--[disabled]="!formData.valid"-->
+      <button type="submit" class="basic-btn">Crear mi cuenta</button>
+
+      <hr>
+
+      <div class="mt-2">
+        <a (click)="_sus.socialLogin('google')" class="nav-item btn-sm  btn btn-danger bg-danger" title="Entrar con Google">
+          <i class="fa fa-google" aria-hidden="true"></i>
+        </a>
+        <a (click)="_sus.socialLogin('facebook')" class="nav-item btn-sm btn btn-primary bg-primary ml-1" title="Entrar Con Facebook">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+        <a (click)="_sus.socialLogin('twitter')" class="nav-item btn-sm  btn btn-info bg-info ml-1" title="Entrar Con Twitter">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <!--<a class="nav-item btn-sm btn btn-light bg-light ml-1" [routerLink]="['/signup']" id="email" title="Unete Con tu email">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </a>-->
+      </div>
+    </form>
+  </div>
+</div>

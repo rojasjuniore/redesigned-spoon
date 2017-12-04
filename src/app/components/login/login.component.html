@@ -1,0 +1,37 @@
+<div class="login-page animated bounceInRight fast">
+  <div class="form">
+    <!-- <div class="d-flex flex-row">
+      <a [routerLink]="['/']" id="">
+        <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>-->
+    <img src="" alt="Descuento">
+    <h3 style="color:#000;">Inicio de sesión</h3>
+    <span class="error" *ngIf="error">{{ error }}</span>
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+      <input type="text" placeholder="Email .." (ngModel)="email" name="email" class="txt" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      <input type="password" placeholder="Contraseña" (ngModel)="password" name="password" class="txt" required>
+      <button type="submit" [disabled]="!formData.valid" class="basic-btn">Iniciar sesión</button>
+      <hr>
+
+      <div *ngIf="_lgs.a_error" class="alert alert-danger mt-1" role="alert">
+        {{_lgs.error}}
+      </div>
+      <!--<div class="mt-2">
+        <a (click)="_lgs.socialLogin('google')" class="nav-item btn-sm  btn btn-danger bg-danger" title="Entrar con Google">
+          <i class="fa fa-google" aria-hidden="true"></i>
+        </a>
+        <a (click)="_lgs.socialLogin('facebook')" class="nav-item btn-sm btn btn-primary bg-primary ml-1" title="Entrar Con Facebook">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+        <a (click)="_lgs.socialLogin('twitter')" class="nav-item btn-sm  btn btn-info bg-info ml-1" title="Entrar Con Twitter">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+      </div>-->
+      <p class="message"> ¿Primera vez en Descuento?
+        <a [routerLink]="['/signup']">
+          Suscríbete ya.</a>
+      </p>
+    </form>
+  </div>
+</div>

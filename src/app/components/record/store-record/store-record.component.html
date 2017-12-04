@@ -1,0 +1,64 @@
+<div class="container mt-3">
+  <div class="text-center">
+    <h1>Registro de Almacen</h1>
+  </div>
+  <hr/>
+  <div class="row mt-3">
+    <div class="col">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" role="form">
+        <div class="form-group">
+          <label class="control-label" for="Nombre">Nombres</label>
+          <input name="name" [(ngModel)]="warehouse.name" required type="text" class="form-control" name="nombre" placeholder="Introduzca su nombre"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="Identificación">Identificación</label>
+          <input name="identification_card" [(ngModel)]="warehouse.identification_card" type="text" class="form-control" name="identificacion"
+            placeholder="Introduzca su identificación" />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="telefonos">Telefonos</label>
+          <input name="phone_number" [(ngModel)]="warehouse.phone_number" type="text" class="form-control" placeholder="Introduzca su Telefono"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email</label>
+          <input name="email" [(ngModel)]="warehouse.email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <h3>Datos de Direccion</h3>
+        <div class="form-group">
+          <label class="control-label" for="calle">Calle y Numero</label>
+          <input name="street_and_number" [(ngModel)]="warehouse.street_and_number" type="text" class="form-control" id="Plan" placeholder="Introduzca Calle y Numero"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="Cercania">Ciudad</label>
+          <input name="city" [(ngModel)]="warehouse.city" type="text" class="form-control" id="Plan" name="ciudad" placeholder="Introduzca la Ciudad"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="Cercania">Pais</label>
+          <input name="country" [(ngModel)]="warehouse.country" type="text" class="form-control" id="Plan" name="pais" placeholder="Introduzca el pais"
+          />
+        </div>
+        <hr />
+        <!--<div class="form-group">
+          <label for="exampleFormControlFile1">Example file input</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>-->
+        <hr />
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="Enviar">
+          <input type="reset" class="btn btn-default" value="Limpiar">
+        </div>
+      </form>
+
+    </div>
+    <div class="col">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+        <agm-marker *ngFor="let lugar of places" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+
+</div>
