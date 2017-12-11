@@ -3,13 +3,13 @@
     <li class="sidebar-brand">
       <a [routerLink]="['/dashboard']">
         Mi Zona
-        <img src="./assets/iconsimbolo.svg" height="50" width="50" alt="Descuento">
+        <img src="./assets/imagen/logo_simbolo60x60fondonegro.png" height="50" width="50" alt="Descuento">
 
       </a>
     </li>
     <li>
       <a [routerLink]="['/dashboard']" routerLinkActive="active">
-        Dashboard
+        Tablero
         <i class="fa fa-tachometer" aria-hidden="true"></i>
       </a>
     </li>
@@ -26,12 +26,12 @@
     </li>-->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Almacenes
+        ALMACENES
         <i class="fa fa-file-text-o" aria-hidden="true"></i>
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" [routerLink]="['/storequery']" routerLinkActive="active">Consulta de tienda</a>
         <a class="dropdown-item" [routerLink]="['/storerecord']" routerLinkActive="active">Registro de tienda</a>
+        <a class="dropdown-item" [routerLink]="['/storequery']" routerLinkActive="active">Consulta de tienda</a>
       </div>
     </li>
     <li>

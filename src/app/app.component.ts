@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavbarService } from './services/services';
 declare var $: any;
 
 
@@ -8,13 +9,19 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title: string = 'My first AGM project';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+export class AppComponent implements OnInit {
+  title = 'My first AGM project';
+  _toggled: boolean;
+  lat = 51.678418;
+  lng = 7.809007;
 
-  constructor() {
+  constructor(public _ns: NavbarService) {
   }
+
+  ngOnInit() {
+    this._ns.hide();
+  }
+
 
   show() {
     $("#menu-toggle").click((e) => {

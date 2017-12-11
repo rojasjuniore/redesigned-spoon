@@ -11,11 +11,11 @@
           <input name="name" [(ngModel)]="warehouse.name" required type="text" class="form-control" name="nombre" placeholder="Introduzca su nombre"
           />
         </div>
-        <div class="form-group">
+        <!--<div class="form-group">
           <label class="control-label" for="Identificación">Identificación</label>
           <input name="identification_card" [(ngModel)]="warehouse.identification_card" type="text" class="form-control" name="identificacion"
             placeholder="Introduzca su identificación" />
-        </div>
+        </div>-->
         <div class="form-group">
           <label class="control-label" for="telefonos">Telefonos</label>
           <input name="phone_number" [(ngModel)]="warehouse.phone_number" type="text" class="form-control" placeholder="Introduzca su Telefono"
@@ -44,7 +44,7 @@
         <hr />
         <div class="form-group">
           <label for="exampleFormControlFile1">Subir foto</label>
-          <input type="file" multiple class="form-control-file" id="exampleFormControlFile1">
+          <input (change)="fileChanges($event)" type="file" multiple class="form-control-file" id="exampleFormControlFile1">
         </div>
         <hr />
         <div class="form-group">

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { WarehouseService, NavbarService } from '../../services/services';
+import { WarehouseService, NavbarService, CommonService } from '../../services/services';
 declare var $: any;
 
 
@@ -17,19 +17,13 @@ export class DashboardComponent implements OnInit {
 
   constructor(public _whs: WarehouseService,
     public _ns: NavbarService,
-    private _http: Http) { }
+    public _cs: CommonService,
+    private _http: Http) {
+    this._ns.show();
+  }
 
   ngOnInit() {
-
-    this._ns.show();
     this.getPlace();
-
-    /*this._http.get('./assets/data.json')
-      .subscribe((data) => {
-        setTimeout(() => {
-          this.data = data.json();
-        }, 1000);
-      });*/
   }
 
   getPlace() {
@@ -37,10 +31,9 @@ export class DashboardComponent implements OnInit {
       getWarehouses()
       .subscribe((places) => {
         this.places = places;
-        //  console.log(places);
+        console.log(places);
         const me = this;
         me.places = Object.keys(me.places).map(function (key) { return me.places[key]; });
-
       }, erro => console.log(erro));
   }
 

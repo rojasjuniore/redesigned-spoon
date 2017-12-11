@@ -1,17 +1,9 @@
-<div id="wrapper" class="toggled">
-
-    <!-- Sidebar -->
-    <app-nav-bar></app-nav-bar>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-
-            <router-outlet></router-outlet>
-            <!--<a (click)="show()" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>-->
-        </div>
+<div id="wrapper" [ngClass]="{'toggled': _ns.visible}">
+  <app-nav-bar></app-nav-bar>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
     </div>
-    <!-- /#page-content-wrapper -->
-
+  </div>
 </div>
+<ng4-loading-spinner> </ng4-loading-spinner>

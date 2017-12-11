@@ -26,28 +26,17 @@ export class StoreQueryComponent implements OnInit {
 
   ngOnInit() {
     this._ns.show();
-// this.spinnerService.show();
-
-    /*this._http.get('./assets/data.json')
-      .subscribe((data) => {
-        setTimeout(() => {
-          this.data = data.json();
-          this.spinnerService.hide();
-        }, 1000);
-      });*/
     this.getWarehouses();
   }
 
   getWarehouses() {
+    this.spinnerService.show();
     this._whs.getWarehouses()
       .subscribe(warehouses => {
-        console.log(warehouses)
         this.data = warehouses;
-        //  console.log(places);
         const me = this;
         me.data = Object.keys(me.data).map(function (key) { return me.data[key]; });
-
-       // this.spinnerService.hide();
+        this.spinnerService.hide();
       },
       error => console.log(error));
   }

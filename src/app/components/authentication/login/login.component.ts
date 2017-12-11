@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService, NavbarService } from '../../services/services';
+import { LoginService, NavbarService } from '../../../services/services';
 declare var $: any;
 
 @Component({
@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this._ns.hide();
-    this.a_error = this._lgs.a_error
-    this.error = this._lgs.error
+    this.a_error = this._lgs.a_error;
+    this.error = this._lgs.error;
     // $("#wrapper").removeClass("toggled");
   }
 

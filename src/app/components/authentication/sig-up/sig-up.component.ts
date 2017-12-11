@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SigUpService } from '../../services/services';
+import { SigUpService } from '../../../services/services';
 
 
 @Component({

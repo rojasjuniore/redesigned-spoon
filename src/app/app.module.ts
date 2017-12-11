@@ -79,7 +79,7 @@ import { GuardGuard } from './guard/guard.guard';
     }),
     DataTableModule,
     Ng4LoadingSpinnerModule.forRoot(), // https://github.com/amitmahida92/ng4-loading-spinner
-    NgbModule.forRoot() //https://ng-bootstrap.github.io/#/getting-started
+    NgbModule.forRoot() // https://ng-bootstrap.github.io/#/getting-started
   ],
   providers: [
     WarehouseService,

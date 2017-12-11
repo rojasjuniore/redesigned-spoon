@@ -15,7 +15,6 @@ export class PromotionComponent implements OnInit {
   files: any;
 
   campaign_name = '';
-  lugar = '';
   description__promotion = '';
   start_of_campaign = '';
   end_of_campaign = '';
@@ -46,34 +45,34 @@ export class PromotionComponent implements OnInit {
 
   fileChanges(event) {
     this.files = event.target.files;
-    console.log(this.files)
   }
 
   onSubmit(f: NgForm) {
 
-    // this.spinnerService.show();
-    console.log(f.value)
+
+    // tslint:disable-next-line:curly
     if (f.value.length <= 0) return;
+
+    this.spinnerService.show();
     this._whs.savePromotion(f.value)
       .subscribe((data) => {
-        console.log(data)
         this.spinnerService.hide();
       }, erro => console.log(erro));
 
 
     setTimeout(() => {
-      // this.spinnerService.show();
-      if (this.files.length <= 0) {
-        this.spinnerService.hide();
-        return;
-      }
-
+      
+      // tslint:disable-next-line:curly
+      if (this.files.length <= 0) return;
+      this.spinnerService.show();
       this._us.uploadMultiple(this.files)
         .then(() => {
-          // this.spinnerService.hide();
+          this.spinnerService.hide();
+          alert('Promocion Creada');
         });
-      console.log(this.files)
     }, 3000);
+
+
   }
 
 }

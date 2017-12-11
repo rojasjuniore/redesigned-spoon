@@ -8,4 +8,13 @@ export class CommonService {
     getUser() {
         return JSON.parse(localStorage.getItem('usuario'));
     }
+
+    toggled(): boolean {
+        let _toggled;
+        if (this.getUser()) {
+            return _toggled = true;
+        } else {
+            return _toggled = false;
+        }
+    }
 }

@@ -1,6 +1,14 @@
-<div class="container-fluid">
-  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
-    <agm-marker *ngFor="let lugar of places" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
+<h1>Bienvenido a
+  <img src="./assets/imagen/Logo_TEMPORAL.png" height="50" alt=" ">
+</h1>
+
+<hr>
+<div class="container-fluid ">
+  <agm-map [latitude]="lat " [longitude]="lng " [zoom]="13 ">
+    <agm-marker *ngFor="let lugar of places " [latitude]="lugar.lat " [longitude]="lugar.lng "></agm-marker>
   </agm-map>
   <hr>
 </div>
+<ul *ngFor="let lugar of places ">
+  <li>{{lugar.lat}} / {{lugar.lng}}</li>
+</ul>
